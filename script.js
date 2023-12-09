@@ -1,4 +1,4 @@
-function createLinkedList(value) {
+function createLinkedList() {
 	function append(value) {
 		let currentNode = headNode;
 
@@ -177,8 +177,11 @@ function createNode(value) {
 	};
 }
 
-let myList = createLinkedList(10);
-myList.append(101);
-myList.append(22);
-myList.append(11);
-console.log(myList.head());
+let exampleList = createLinkedList();
+exampleList.append(101);
+exampleList.append(22);
+exampleList.append(11);
+exampleList.append(9000);
+
+console.log("Example List 👇");
+console.log(exampleList.toString());
