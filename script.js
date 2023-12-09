@@ -8,11 +8,13 @@ function createLinkedList(value) {
 
 		currentNode.nextNode = createNode(value);
 	}
+
 	function prepend(value) {
 		let newHead = createNode(value);
 		newHead.nextNode = headNode;
 		headNode = newHead;
 	}
+
 	function size() {
 		let count = 1;
 		let currentNode = headNode;
@@ -24,6 +26,7 @@ function createLinkedList(value) {
 
 		return count;
 	}
+
 	function head() {
 		return headNode;
 	}
@@ -37,6 +40,7 @@ function createLinkedList(value) {
 
 		return currentNode;
 	}
+
 	function at(index) {
 		let currentNode = headNode;
 		let count = 0;
@@ -67,7 +71,19 @@ function createLinkedList(value) {
 
 		currentNode.nextNode = null;
 	}
-	function contains(value) {}
+
+	function contains(value) {
+		let currentNode = headNode;
+
+		while (currentNode != null) {
+			if (currentNode.value === value) {
+				return true;
+			}
+			currentNode = currentNode.nextNode;
+		}
+
+		return false;
+	}
 	function find(value) {}
 	function toString() {}
 
