@@ -123,6 +123,23 @@ function createLinkedList(value) {
 		newNode.nextNode = proceedingNode;
 	}
 
+	function removeAt(index) {
+		let indexNextNode = at(index + 1);
+		let indexPreviousNode = at(index - 1);
+
+		let listLength = size() - 1;
+
+		if (index > listLength || index === 0) {
+			return "ERROR: Please select an index within the scope of the list.";
+		}
+
+		if (index === listLength) {
+			indexPreviousNode.nextNode = null;
+		} else {
+			indexPreviousNode.nextNode = indexNextNode;
+		}
+	}
+
 	let headNode = createNode("HEAD");
 
 	return {
@@ -140,6 +157,7 @@ function createLinkedList(value) {
 		find,
 		toString,
 		insertAt,
+		removeAt,
 	};
 }
 
