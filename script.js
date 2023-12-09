@@ -8,13 +8,11 @@ function createLinkedList(value) {
 
 		currentNode.nextNode = createNode(value);
 	}
-
 	function prepend(value) {
 		let newHead = createNode(value);
 		newHead.nextNode = headNode;
 		headNode = newHead;
 	}
-
 	function size() {
 		let count = 1;
 		let currentNode = headNode;
@@ -26,11 +24,9 @@ function createLinkedList(value) {
 
 		return count;
 	}
-
 	function head() {
 		return headNode;
 	}
-
 	function tail() {
 		let currentNode = headNode;
 
@@ -40,15 +36,23 @@ function createLinkedList(value) {
 
 		return currentNode;
 	}
+	function at(index) {
+		let currentNode = headNode;
+		let count = 0;
 
-	function at(index) {}
-
+		while (currentNode != null) {
+			if (count == index) {
+				return currentNode;
+			} else {
+				count++;
+			}
+			currentNode = currentNode.nextNode;
+		}
+		return "ERROR: Index is out of scope.";
+	}
 	function pop() {}
-
 	function contains(value) {}
-
 	function find(value) {}
-
 	function toString() {}
 
 	let headNode = createNode(value);
