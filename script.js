@@ -114,6 +114,15 @@ function createLinkedList(value) {
 		return string;
 	}
 
+	function insertAt(value, index) {
+		let proceedingNode = at(index);
+		let precedingNode = at(index - 1);
+		let newNode = createNode(value, null);
+
+		precedingNode.nextNode = newNode;
+		newNode.nextNode = proceedingNode;
+	}
+
 	let headNode = createNode("HEAD");
 
 	return {
@@ -130,6 +139,7 @@ function createLinkedList(value) {
 		contains,
 		find,
 		toString,
+		insertAt,
 	};
 }
 
