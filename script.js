@@ -27,6 +27,7 @@ function createLinkedList(value) {
 	function head() {
 		return headNode;
 	}
+
 	function tail() {
 		let currentNode = headNode;
 
@@ -50,12 +51,27 @@ function createLinkedList(value) {
 		}
 		return "ERROR: Index is out of scope.";
 	}
-	function pop() {}
+
+	function pop() {
+		if (size() === 1) {
+			return "ERROR: Can't delete Head.";
+		}
+		let currentNode = headNode;
+		let secondLastNode = size() - 1;
+		let count = 1;
+
+		while (count != secondLastNode) {
+			currentNode = currentNode.nextNode;
+			count++;
+		}
+
+		currentNode.nextNode = null;
+	}
 	function contains(value) {}
 	function find(value) {}
 	function toString() {}
 
-	let headNode = createNode(value);
+	let headNode = createNode("HEAD");
 
 	return {
 		get headNode() {
