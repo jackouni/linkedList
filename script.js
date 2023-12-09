@@ -58,8 +58,9 @@ function createLinkedList(value) {
 
 	function pop() {
 		if (size() === 1) {
-			return "ERROR: Can't delete Head.";
+			return "ERROR: Can't remove HEAD.";
 		}
+
 		let currentNode = headNode;
 		let secondLastNode = size() - 1;
 		let count = 1;
@@ -84,7 +85,22 @@ function createLinkedList(value) {
 
 		return false;
 	}
-	function find(value) {}
+
+	function find(value) {
+		let currentNode = headNode;
+		let count = 0;
+
+		while (currentNode != null) {
+			if (currentNode.value === value) {
+				return count;
+			}
+			currentNode = currentNode.nextNode;
+			count++;
+		}
+
+		return null;
+	}
+
 	function toString() {}
 
 	let headNode = createNode("HEAD");
