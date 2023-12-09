@@ -140,6 +140,14 @@ function createLinkedList(value) {
 		}
 	}
 
+	function replace(index, value) {
+		if (index === 0) {
+			return "ERROR: Cannot remove HEAD node.";
+		}
+		insertAt(value, index);
+		removeAt(index + 1);
+	}
+
 	let headNode = createNode("HEAD");
 
 	return {
@@ -158,6 +166,7 @@ function createLinkedList(value) {
 		toString,
 		insertAt,
 		removeAt,
+		replace,
 	};
 }
 
