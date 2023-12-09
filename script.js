@@ -101,7 +101,18 @@ function createLinkedList(value) {
 		return null;
 	}
 
-	function toString() {}
+	function toString() {
+		let currentNode = headNode;
+		let string = "";
+
+		while (currentNode != null) {
+			string += ` ( ${currentNode.value} ) -> `;
+			currentNode = currentNode.nextNode;
+		}
+
+		string += " null ";
+		return string;
+	}
 
 	let headNode = createNode("HEAD");
 
